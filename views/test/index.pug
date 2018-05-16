@@ -1,0 +1,11 @@
+extends ../default/layout.pug
+block scripts
+  script(src='/main.js')
+  script 
+block content
+  -var hello = true
+  -var footer = "I am a footer"
+  h2 #{hello?'hello':'goodbye'}
+
+block foot
+  p #{footer}
