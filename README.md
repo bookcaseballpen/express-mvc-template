@@ -20,9 +20,10 @@ clone the repo, install packages and run start script
 
 ## file structure
 
-* controllers - controller folder
-* views - view folder
-* public - static folder
+* controllers : controller folder
+* views : view folder
+* public : static folder
+* landing-page : each folder inside this path is a individual landing page
 * server.js - nodejs express server
 
 ## optional middlewares
@@ -32,6 +33,7 @@ clone the repo, install packages and run start script
 * express.methodOverride()
 * express.cookieParser()
 * express.session()
+* compression 
 
 ## log
 

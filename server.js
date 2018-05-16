@@ -4,11 +4,11 @@ var express = require('express')
       ,favicon = require('serve-favicon')
       ,fs = require('fs');
  
-console.log(process.env.NODE_ENV)
 server.set('port', process.env.PORT || 8080);
 server.set('views', __dirname + '/views');
 server.set('view engine', 'pug');
 server.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 /* optional middlewares
 server.use(express.logger('dev'));
 server.use(express.bodyParser());
@@ -22,6 +22,10 @@ fs.readdirSync('./controllers').forEach(function (file) {
      server.use(require('./controllers/' + file))
   }
 });
+fs.readdirSync('./landing-pages/').forEach(function (file) {
+     server.use(require('./landing-pages/' + file + '/index.js'))
+});
+
 server.use('*', (req, res) => res.redirect('/error/505'))
 
 server.listen(server.get('port'), console.log('Express server listening on port ' + server.get('port')))
